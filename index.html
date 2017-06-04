@@ -32,7 +32,6 @@
 
 		function updateText()
 		{
-			el.innerHTML = el.innerHTML+words[word_counter][character_counter++];
 
 			if(character_counter == words[word_counter].length)
 			{
@@ -44,6 +43,8 @@
 				if(word_counter == words.length)
 					word_counter = 0;
 			}
+
+			el.innerHTML = el.innerHTML+words[word_counter][character_counter++].replace(" ","&nbsp;");
 		}
 
 		setInterval(updateText,300);
